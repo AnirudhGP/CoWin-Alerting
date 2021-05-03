@@ -36,7 +36,7 @@ def sendmail(contents):
 	# Authentication
 	s.login(secrets.email, secrets.password)
 
-	message = """From: Anirudh GP<anirudh.gp@gmail.com>
+	message = """From: CoWin Alerting<{}>
 MIME-Version: 1.0
 Content-type: text/html
 Subject: Covid Vaccine Availability Found!
@@ -64,7 +64,7 @@ Subject: Covid Vaccine Availability Found!
 <body>
 {}
 </body>
-""".format(contents)
+""".format(secrets.email, contents)
 	  
 	# sending the mail
 	s.sendmail(secrets.email, secrets.email_recipients, message)
